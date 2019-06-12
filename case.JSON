@@ -1,0 +1,102 @@
+{
+  "waitTime": 5000,
+  "clean": true,
+  "steps": [
+    {
+      "action": "OpenApplication",
+      "packageName": "com.zhongan.insurance",
+      "waitTime": 1000,
+      "result": null
+    },
+    {
+      "action": "Click",
+      "text": "跳过",
+      "waitTime": 1000,
+      "result": null
+    },
+    {
+      "action":"ClickByPoint",
+      "touchX":448,
+      "touchY":225,
+      "waitTime":1000,
+      "result":null
+    },
+    {
+      "action":"ClickByPoint",
+      "touchX":448,
+      "touchY":225,
+      "waitTime":1000,
+      "result":null
+    },
+    {
+      "action":"ClickByPoint",
+      "touchX":448,
+      "touchY":225,
+      "waitTime":5000,
+      "result":null
+    },
+    {
+      "action": "Swipe",
+      "endX": 300,
+      "endY": 400,
+      "startX": 300,
+      "startY": 780,
+      "waitTime": 5000,
+      "steps":50
+    },
+    {
+      "action": "Click",
+      "text": "头条",
+      "waitTime": 1000,
+      "result": null
+    },
+    {
+      "action":"ClickByPoint",
+      "touchX":448,
+      "touchY":225,
+      "waitTime":1000,
+      "result":null
+    },
+    {
+      "action":"Click",
+      "id":"com.zhongan.insurance:id/search_btn",
+      "waitTime":1000,
+      "result":null
+    },
+    {
+      "action":"Input",
+      "id":"com.zhongan.insurance:id/search_bar",
+      "reText":"test随便输入",
+      "waitTime":1000,
+      "result":null
+    },
+    {
+        "action":"AssertExsit",
+        "text":"取消",
+        "waitTime":1000,
+        "result":null
+    },
+    {
+        "action":"LongClick",
+        "id":"com.zhongan.insurance:id/search_bar",
+        "waitTime":1000,
+        "result":null
+
+
+    },
+    {
+      "action":"WaitUntilGone",
+      "text":"取消",
+      "watTime":1000,
+      "result":null
+
+    },
+    {
+        "action":"AssertExsit",
+        "text":"cuowu",
+        "watTime":1000,
+        "result":null
+
+    }
+  ]
+}

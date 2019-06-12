@@ -1,0 +1,46 @@
+apply plugin: 'com.android.application'// 表示是一个应用程序的模块，可独立运行
+//apply plugin:'com.android.library' //表示是一个依赖库，不能独立运行
+
+android {
+    compileSdkVersion 27 //制定项目的编译版本  安卓8.1
+    defaultConfig {
+        applicationId "com.smart.farmer" //指定包名
+        minSdkVersion 18 //指定最低的兼容的Android系统版本 安卓4.3
+        targetSdkVersion 27 //指定你的目标版本，表示你在该Android系统版本已经做过充分的测试
+        versionCode 1 //版本号
+        versionName "1.5" //版本名称
+        
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        config {
+            keyAlias 'key0'
+            keyPassword '123456'
+            storeFile file('../farmer.key')
+            storePassword '123456'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+
+
+    implementation 'com.android.support.test:runner:1.0.2'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+
+
+}
