@@ -1,15 +1,12 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    //构建过程依赖的仓库
     repositories {
         maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
         google()
-        //代码托管仓库
         jcenter()
     }
     dependencies {
-        //gradle插件及使用版本
         classpath 'com.android.tools.build:gradle:3.1.4'
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -17,18 +14,13 @@ buildscript {
     }
 }
 
-//这里面配置整个仙姑依赖的仓库，这样每个module就不用配置仓库了
 allprojects {
     repositories {
         maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
         google()
-        //代码托管仓库，可以引用jcenter()上任何的开源项目
         jcenter()
     }
 }
-//运行gradle clean时，执行此处定义的task
-//该任务继承自Delete，删除根目录中的build目录
-//相当于执行Delete.delete(rootProject.buildDir)
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
