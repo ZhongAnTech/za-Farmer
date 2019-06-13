@@ -1,0 +1,19 @@
+language: android
+sudo: true
+android:
+  components:
+    - tools
+    - platform-tools
+    - tools
+    - build-tools-27.0.3
+    - android-27
+    - extra-android-m2repository
+    - extra-android-support
+  licenses:
+    - 'android-sdk-preview-license-.+'
+    - 'android-sdk-license-.+'
+    - 'google-gdk-license-.+'
+before_install:
+- yes | sdkmanager "platforms;android-27"
+script:
+  - ./gradlew clean assembleAndroidTest assembleDebug

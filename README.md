@@ -1,3 +1,4 @@
+# [![Build Status](https://travis-ci.com/ZhonganTechQA/za-Farmer.svg?branch=master)](https://travis-ci.com/ZhonganTechQA/za-Farmer)
 # za-Farmer
  
 za-Farmer 是一个基于Uiautomator2.0 的命令行自动化工具，你可以通过命令行驱动Uiautomator进行Android自动化测试。
