@@ -1,6 +1,7 @@
-# [![Build Status](https://travis-ci.com/ZhonganTechQA/za-Farmer.svg?branch=master)](https://travis-ci.com/ZhonganTechQA/za-Farmer)
+
 # za-Farmer
- 
+  [![Build Status](https://travis-ci.com/ZhonganTechQA/za-Farmer.svg?branch=master)](https://travis-ci.com/ZhonganTechQA/za-Farmer)
+  
 za-Farmer 是一个基于Uiautomator2.0 的命令行自动化工具，你可以通过命令行驱动Uiautomator进行Android自动化测试。
 
 我们封装了Android大部分常用操作，你可以很容易的使用它实现你的Android自动化需求。
@@ -65,7 +66,7 @@ adb install -g /Farmer_new/app/build/outputs/apk/debug
 
 
 ## 简单示例
-#### 点击“设置”
+- #### 点击元素
 <img src="./markdown/image/审查元素.jpg" width = "400" height = "300" alt="1559791932003.jpg" ><br/>
 ```bash
 $ adb shell am instrument -w  -e class 'com.smart.farmer.ExampleInstrumentedTest#step'  \
@@ -74,20 +75,19 @@ $ adb shell am instrument -w  -e class 'com.smart.farmer.ExampleInstrumentedTest
  com.smart.farmer.test/android.support.test.runner.AndroidJUnitRunner
 ```
 
-#### 执行完成后导出过程截图
+ 执行完成后导出过程截图
 ```bash
 $ adb pull /storage/emulated/0/Android/data/com.smart.farmer/cache/  ./Desktop/
 ```
 
 <img src="./markdown/image/1559791932003.jpg" width = "150" height = "280" alt="1559791932003.jpg" ><br/>
 
-#### 点击“随便看看”,自动点击权限弹框
+- #### 点击元素,自动处理权限弹框
 
 ```bash
-$ adb shell am instrument -w  -e class 'com.smart.farmer.ExampleInstrumentedTest#step'  \
--e step-action openApplication \
--e step-autoPermit true  \
--e step-packageName com.zhongan.insurance  \
-com.smart.farmer.test/android.support.test.runner.AndroidJUnitRunner
+$ adb shell am instrument -w  -e class 'com.smart.farmer.ExampleInstrumentedTest#step' \ 
+ -e step-action click 
+ -e step-elementText 随便看看 
+ -e step-autoPermit true  com.smart.farmer.test/android.support.test.runner.AndroidJUnitRunner
 ```
 <img src="./markdown/image/1560851185191.jpg" width = "150" height = "280" alt="1560851185191.jpg" ><img src="./markdown/image/1560851188145.jpg" width = "150" height = "280" alt="1560851188145.jpg" >
