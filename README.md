@@ -20,8 +20,8 @@ za-Farmer 是一个基于Uiautomator2.0 的命令行自动化工具，你可以�
 ### 1、步骤执行自动截图
 执行过程中每个步骤都会截图记录操作的元素或标注执行轨迹
 
-<img src="./markdown/image/1560233295793.jpg" width = "150" height = "280" alt="1560233295793.jpg" > 
-<img src="./markdown/image/1560305600360.jpg" width = "150" height = "280" alt="1560305600360.jpg" ><br/>
+<img src="./markdown/image/1560233295793.jpg" width = "150" height = "280" alt="1560233295793.jpg" ><img src="./markdown/image/1560305600360.jpg" width = "150" height = "280" alt="1560305600360.jpg" >
+
 
 ### 2、权限弹框自动处理
 对于应用程序弹出的权限弹框进行自动处理<br/>
@@ -73,9 +73,21 @@ $ adb shell am instrument -w  -e class 'com.smart.farmer.ExampleInstrumentedTest
  -e step-elementText 设置  \
  com.smart.farmer.test/android.support.test.runner.AndroidJUnitRunner
 ```
+
 #### 执行完成后导出过程截图
 ```bash
 $ adb pull /storage/emulated/0/Android/data/com.smart.farmer/cache/  ./Desktop/
 ```
 
 <img src="./markdown/image/1559791932003.jpg" width = "150" height = "280" alt="1559791932003.jpg" ><br/>
+
+#### 点击“随便看看”,自动点击权限弹框
+
+```bash
+$ adb shell am instrument -w  -e class 'com.smart.farmer.ExampleInstrumentedTest#step'  \
+-e step-action openApplication \
+-e step-autoPermit true  \
+-e step-packageName com.zhongan.insurance  \
+com.smart.farmer.test/android.support.test.runner.AndroidJUnitRunner
+```
+<img src="./markdown/image/1560851185191.jpg" width = "150" height = "280" alt="1560851185191.jpg" ><img src="./markdown/image/1560851188145.jpg" width = "150" height = "280" alt="1560851188145.jpg" >
