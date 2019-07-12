@@ -71,26 +71,26 @@ public class GlobalEventListener {
                                 }
 
 
-                                String btnText = null;
-                                final List<CharSequence> texts = event.getText();
-                                for (CharSequence text : texts) {
-                                    if (Pattern.matches(allowButton, text)) {
-                                        btnText = text.toString();
-                                        break;
-                                    }
-                                }
+//                                String btnText = null;
+//                                final List<CharSequence> texts = event.getText();
+//                                for (CharSequence text : texts) {
+//                                    if (Pattern.matches(allowButton, text)) {
+//                                        btnText = text.toString();
+//                                        break;
+//                                    }
+//                                }
+//
+//                                //btnText 符合
+//                                if (btnText == null) {
+//                                    return;
+//                                }
+//
+//                                //文本日志
+//                                LogUtils.getInstance().info("permissions window: package " + packageName
+//                                        + ",text " + texts);
 
-                                //btnText 符合
-                                if (btnText == null) {
-                                    return;
-                                }
 
-                                //文本日志
-                                LogUtils.getInstance().info("permissions window: package " + packageName
-                                        + ",text " + texts);
-
-
-                                BySelector permissionsSelector = By.pkg(packageName).text(btnText);
+                                BySelector permissionsSelector = By.pkg(packageName).text(Pattern.compile(allowButton));
                                 UiObject2 obj = uiDevice.findObjectOnce(permissionsSelector);
 
                                 //截图日志
