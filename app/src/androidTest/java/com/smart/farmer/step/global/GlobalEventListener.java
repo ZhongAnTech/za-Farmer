@@ -61,7 +61,7 @@ public class GlobalEventListener {
                         try {
                             final int eventType = event.getEventType();
                             //处理权限框
-                            if (eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED && permissionsWindowHandler) {
+                            if (eventType == AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED && permissionsWindowHandler) {
 
 
                                 //package 符合
@@ -71,6 +71,7 @@ public class GlobalEventListener {
                                 }
 
 
+                                //部分机型无法获取全部的Texts，故下面部分进行注释
 //                                String btnText = null;
 //                                final List<CharSequence> texts = event.getText();
 //                                for (CharSequence text : texts) {

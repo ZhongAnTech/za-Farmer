@@ -71,11 +71,11 @@ public abstract class BaseElementHandler extends BaseStep {
         this.elementText = elementText;
     }
 
-    public String getElementClass() {
+    public String getElementClazz() {
         return elementClazz;
     }
 
-    public void setElementClass(String elementClazz) {
+    public void setElementClazz(String elementClazz) {
         this.elementClazz = elementClazz;
     }
 
