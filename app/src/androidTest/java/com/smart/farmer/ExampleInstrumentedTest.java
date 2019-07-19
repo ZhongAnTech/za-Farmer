@@ -85,7 +85,7 @@ public class ExampleInstrumentedTest {
             args.putString(resultPathKey, InstrumentationRegistry.getTargetContext().getExternalCacheDir().getPath());
         }
         if (!args.containsKey(autoPermitKey)) {
-            args.putBoolean(autoPermitKey, true);
+            args.putString(autoPermitKey, "true");
 
         }
 
@@ -93,14 +93,14 @@ public class ExampleInstrumentedTest {
 
         String executeFile = args.getString(caseFileKey);
         String executeResult = args.getString(resultPathKey);
-        Boolean autoPermit = args.getBoolean(autoPermitKey);
+        String autoPermit = args.getString(autoPermitKey);
 
 
         TestCase testCase = TestCaseFactory.getTestCase(new File(executeFile));
 
 
         //全局处理权限弹窗(开关控制)
-        if (autoPermit) {
+        if (autoPermit.equals("true")) {
 
             GlobalEventListener.getInstance().usePermissionsWindowHandler(true);
         }
