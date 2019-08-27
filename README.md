@@ -39,27 +39,27 @@ cd ./za-Farmer
 ```
 成功后生成两个apk
 
-/Farmer_new/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk
+./app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk
 
-/Farmer_new/app/build/outputs/apk/debug/app-debug.apk
+./app/build/outputs/apk/debug/app-debug.apk
 
 ## 安装
 
 - 安卓5.0以下安装方式:
 
 ```bash
-adb install  /Farmer_new/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk
+adb install  ./app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk
 ```
 ```bash
-adb install  /Farmer_new/app/build/outputs/apk/debug
+adb install  ./app/build/outputs/apk/debug
 ```
 - 安卓5.0以上安装方式:
 
 ```bash
-adb install -g /Farmer_new/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk
+adb install -g ./app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk
 ```
 ```bash
-adb install -g /Farmer_new/app/build/outputs/apk/debug
+adb install -g ./app/build/outputs/apk/debug
 ```
 #### 注意:-g 参数为授予所有运行权限，安卓5.0以下不支持
 
