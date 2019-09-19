@@ -30,13 +30,13 @@ public class OpenApplication extends BaseElementHandler {
     }
 
 
-    private boolean clear;
+    private Boolean clear;
 
-    public boolean getClear() {
+    public Boolean getClear() {
         return clear;
     }
 
-    public void setClear(boolean clear) {
+    public void setClear(Boolean clear) {
         this.clear = clear;
     }
 
