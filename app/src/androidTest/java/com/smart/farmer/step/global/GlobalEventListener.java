@@ -93,19 +93,20 @@ public class GlobalEventListener {
 
                                 BySelector permissionsSelector = By.pkg(packageName).text(Pattern.compile(allowButton));
                                 UiObject2 obj = uiDevice.findObjectOnce(permissionsSelector);
+                                if (obj!= null) {
 
-                                //截图日志
-                                LogUtils.getInstance().infoScreenshot(new RectCanvasHandler(obj.getVisibleBounds()));
+                                    //截图日志
+                                    LogUtils.getInstance().infoScreenshot(new RectCanvasHandler(obj.getVisibleBounds()));
+                                    obj.click();
 
-                                obj.click();
-
+                                }
 
                             } else if (eventType == AccessibilityEvent.TYPE_NOTIFICATION_STATE_CHANGED) {
                                 //判断是否是通知事件
                                 Parcelable parcelable = event.getParcelableData();
                                 //如果不是下拉通知栏消息，则为其它通知信息，包括Toast
                                 if (!(parcelable instanceof Notification)) {
-                                    List<CharSequence> messageList = event.getText();
+                                    List <CharSequence> messageList = event.getText();
                                     for (CharSequence toast_Message : messageList) {
                                         if (!TextUtils.isEmpty(toast_Message)) {
                                             for (IGlobalEventChecker toastChecker : toastCheckerSet) {
