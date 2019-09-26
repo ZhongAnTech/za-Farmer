@@ -80,9 +80,9 @@ public class OpenApplication extends BaseElementHandler {
             LogUtils.getInstance().info(startNoClearoutput);
         }
 
-        BySelector bySelector = By.base();
-        bySelector.pkg(this.getPackageName());
-        getElement(bySelector, 10000);
+//        BySelector bySelector = By.base();
+//        bySelector.pkg(this.getPackageName());
+//        getElement(bySelector, 10000);
 
 
         screenshot(TYPE_LOG_SUCCESS);
