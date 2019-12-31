@@ -51,7 +51,7 @@ cd ./za-Farmer
 adb install  ./app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk
 ```
 ```bash
-adb install  ./app/build/outputs/apk/debug
+adb install  ./app/build/outputs/apk/debug/app-debug.apk
 ```
 - 安卓5.0以上安装方式:
 
@@ -59,7 +59,7 @@ adb install  ./app/build/outputs/apk/debug
 adb install -g ./app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk
 ```
 ```bash
-adb install -g ./app/build/outputs/apk/debug
+adb install -g ./app/build/outputs/apk/debug/app-debug.apk
 ```
 #### 注意:-g 参数为授予所有运行权限，安卓5.0以下不支持
 
